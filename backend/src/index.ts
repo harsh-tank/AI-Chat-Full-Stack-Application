@@ -39,6 +39,9 @@ const imagekit = new ImageKit({
     privateKey: process.env.IMAGE_KIT_PRIVATE_KEY!
 });
 //app.options('/api/*', cors(corsOptions));
+app.get("/api/testing/only", (req,res:any)=>{
+   return res.send({message:"Testing Successful"});
+})
 app.get("/api/upload", (req,res)=>{
     const result = imagekit.getAuthenticationParameters();
     res.send(result);
