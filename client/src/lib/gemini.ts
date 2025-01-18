@@ -19,6 +19,7 @@ import {
   
   const model = genAI.getGenerativeModel({
     model: "gemini-1.5-flash",
+    safetySettings
   });
   
   export default model;

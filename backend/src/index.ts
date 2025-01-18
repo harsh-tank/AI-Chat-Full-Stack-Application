@@ -3,8 +3,8 @@ import cors from "cors"
 import ImageKit from "imagekit";
 import mongoose from "mongoose";
 const port = process.env.PORT || 3000;
-import UserChats from "../models/userChats";
-import Chat from "../models/chat";
+import UserChats from "./models/userChats";
+import Chat from "./models/chat";
 import path from "path";
 import url, { fileURLToPath } from "url";
 import { clerkMiddleware, requireAuth } from '@clerk/express'
