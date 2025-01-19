@@ -141,5 +141,5 @@ app.use(errorHandler);
 // });
 app.listen(port, () => {
     connect();
-    console.log(`Server running on ${port} starts`);
+    console.log(`Server running on ${port} started`);
 });
