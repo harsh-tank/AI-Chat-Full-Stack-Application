@@ -1,4 +1,4 @@
-import { IKContext, IKImage, IKUpload } from "imagekitio-react";
+import { IKContext, IKUpload } from "imagekitio-react";
 import React, { Dispatch, SetStateAction } from "react";
 import { useRef } from "react";
 import { UploadResponse } from "imagekit-javascript/dist/src/interfaces/UploadResponse";
