@@ -85,6 +85,7 @@ app.post("/api/chats", requireAuth(), async (req, res) => {
 });
 app.get("/api/userchats", async (req, res) => {
     //console.log("req obj is ", req);
+    return res.status(200).send({success: "userChats"});
     console.log("here in /api/userchats");
     //const userId = req.auth.userId;
     try {
