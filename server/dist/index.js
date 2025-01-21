@@ -84,9 +84,9 @@ app.post("/api/chats", requireAuth(), async (req, res) => {
     }
 });
 app.get("/api/userchats", async (req, res) => {
-    console.log("req obj is ", req);
+    //console.log("req obj is ", req);
     console.log("here in /api/userchats");
-    const userId = req.auth.userId;
+    //const userId = req.auth.userId;
     try {
         const userChats = await UserChats.find({ userId });
         res.status(200).send(userChats[0].chats);
