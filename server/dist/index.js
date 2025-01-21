@@ -136,6 +136,9 @@ const errorHandler = (err, req, res, next) => {
 app.use(errorHandler);
 app.use(express.static(path.join(__dirname, "../../client/dist")));
 app.get("*", (req, res) => {
+    console.log("here");
+    console.log("dirname is ", __dirname);
+    console.log("full path is ", path.join(__dirname, "../../client/dist", "index.html"));
     res.sendFile(path.join(__dirname, "../../client/dist", "index.html"));
 });
 app.listen(port, () => {
