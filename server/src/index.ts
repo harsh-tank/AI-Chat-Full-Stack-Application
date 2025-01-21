@@ -6,14 +6,16 @@ const port = process.env.PORT || 3000;
 import UserChats from "./models/userChats";
 import Chat from "./models/chat";
 import path from "path";
-import url, { fileURLToPath } from "url";
-import { clerkMiddleware, requireAuth } from '@clerk/express'
+import { fileURLToPath } from "url";
+import { requireAuth } from '@clerk/express'
 import { ErrorRequestHandler } from 'express';
+import dotenv from 'dotenv';
 
+dotenv.config();
 const app = express();
 
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = path.dirname(__filename);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const corsOptions = {
   origin: process.env.CLIENT_URL, // Allowed origin
@@ -159,11 +161,12 @@ const errorHandler: ErrorRequestHandler = (err, req, res, next) => {
     res.status(401).send("Unauthenticated!");
   };
 app.use(errorHandler);
-// app.use(express.static(path.join(__dirname, "../client/dist")));
+app.use(express.static(path.join(__dirname, "../../client/dist")));
 
-// app.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname, "../client/dist", "index.html"));
-// });
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../../client/dist", "index.html"));
+});
 
 app.listen(port, ()=>{
     connect()

@@ -1,10 +1,5 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const mongoose_1 = __importDefault(require("mongoose"));
-const chatSchema = new mongoose_1.default.Schema({
+import mongoose from "mongoose";
+const chatSchema = new mongoose.Schema({
     userId: {
         type: String,
         required: true,
@@ -31,4 +26,4 @@ const chatSchema = new mongoose_1.default.Schema({
         },
     ],
 }, { timestamps: true });
-exports.default = mongoose_1.default.models.chat || mongoose_1.default.model("chat", chatSchema);
+export default mongoose.models.chat || mongoose.model("chat", chatSchema);
